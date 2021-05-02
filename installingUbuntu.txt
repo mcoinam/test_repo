@@ -1,0 +1,31 @@
+Installing Ubuntu on my Asus X505ZA (vivobook 15)
+
+1) First get an empty usb disk (pendrive)
+2) Download Ubuntu iso file (LTS version)
+3) Using rufus.exe tool, select the iso file
+4) Select GPT partition scheme if you are using UEFI mode (otherwise MBR for BIOS)
+...
+Alternatively, you can clean the usb drive like this
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          931 GB  3072 KB        *
+  Disk 1    Online           28 GB      0 B        *
+
+DISKPART> select disk 1
+
+Disk 1 is now the selected disk.
+
+DISKPART> clean
+
+DiskPart succeeded in cleaning the disk.
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          931 GB  3072 KB        *
+* Disk 1    Online           28 GB    28 GB        *
+
+DISKPART>
